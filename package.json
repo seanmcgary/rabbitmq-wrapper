@@ -1,0 +1,30 @@
+{
+  "name": "rabbitmq-wrapper",
+  "version": "0.1.0",
+  "description": "AMQP wrapper for managing RabbitMQ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanmcgary/rabbitmq-wrapper.git"
+  },
+  "keywords": [
+    "rabbitmq",
+    "amqp"
+  ],
+  "author": "Sean McGary <sean@seanmcgary.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seanmcgary/rabbitmq-wrapper/issues"
+  },
+  "homepage": "https://github.com/seanmcgary/rabbitmq-wrapper#readme",
+  "dependencies": {
+    "amqp": "^0.2.4",
+    "async": "^1.4.2",
+    "lodash": "^3.10.1",
+    "logwrangler": "^1.0.0",
+    "q": "^1.4.1"
+  }
+}
