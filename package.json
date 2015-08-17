@@ -23,8 +23,8 @@
   "dependencies": {
     "amqp": "^0.2.4",
     "async": "^1.4.2",
+    "bluebird": "^2.9.34",
     "lodash": "^3.10.1",
-    "logwrangler": "^1.0.0",
-    "q": "^1.4.1"
+    "logwrangler": "~0.1.5"
   }
 }
