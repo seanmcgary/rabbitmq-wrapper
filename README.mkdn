@@ -1,0 +1,47 @@
+## rabbitmq-wrapper
+
+Wrapper around the [node-amqp](https://github.com/postwait/node-amqp) library for easily creating rabbitmq publishers/subscribers for building worker queues.
+
+## Install
+
+```
+npm install --save rabbitmq-wrapper
+```
+
+## Setup
+
+```javascript
+
+var RabbitMQ = require('rabbitmq-wrapper');
+
+var server = RabbitMQ.createServer({
+	hostname: 'localhost',
+	port: 5672,
+	connections: [										// setup your exchanges and queues
+		{
+			name: 'dev.my-awesome-queue.com'			// exchange name
+			queues: [
+				{
+					name: 'my-test-queue',				// queue name
+					route: 'my-test-queue'				// queue routing key
+				}
+			]
+		}
+	]
+});
+
+/*
+	You can now get a reference to the queue by providing the exchange name
+	and the queue name
+*/
+var queue = server.getQueue('dev.my-awesome-queue.com', 'my-test-queue');
+/*
+	Calling enqueue will place the message in the in-memory buffer queue
+	to be processed. This helps prevent against lost messages if your
+	publisher loses connection to the rabbitmq server
+*/
+queue.enqueue({
+	myKey: 'my value'
+});
+
+```
