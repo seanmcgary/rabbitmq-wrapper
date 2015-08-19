@@ -5,4 +5,11 @@ var queue = RabbitMQ.createServer({
 	port: 5672
 });
 
-console.log(queue);
+
+queue.createExchange({
+	name: 'test-exchange.com'
+})
+.then(function(exchange){
+	console.log(exchange);
+})
+
