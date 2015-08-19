@@ -17,14 +17,25 @@ var queue = RabbitMQ.createServer({
 });
 
 
-//console.log('queue', queue.getQueue('dev.testqueue.com', 'my-test-queue'));
-
 var Q = queue.getQueue('dev.testqueue.com', 'my-test-queue');
 
+var drainTimeout;
+Q.on('drain', function(){
+	clearTimeout(drainTimeout);
+	console.log('drained, waiting 5 seconds');
+	drainTimeout = setTimeout(function(){
+		process.exit();
+	}, 5000);
+});
+
 var i = 0;
-setInterval(function(){
+var interval = setInterval(function(){
 	Q.enqueue({ test: i });
 	i++;
-}, 1000);
+	if(i > 50){
+		clearInterval(interval);
+	}
+}, 200);
+
 
 
