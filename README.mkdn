@@ -35,6 +35,7 @@ var server = RabbitMQ.createServer({
 	and the queue name
 */
 var queue = server.getQueue('dev.my-awesome-queue.com', 'my-test-queue');
+
 /*
 	Calling enqueue will place the message in the in-memory buffer queue
 	to be processed. This helps prevent against lost messages if your
