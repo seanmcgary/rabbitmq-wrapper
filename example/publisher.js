@@ -27,22 +27,24 @@ Q.on('drain', function(){
 	clearTimeout(drainTimeout);
 	console.log('drained, waiting 5 seconds');
 	drainTimeout = setTimeout(function(){
+		console.log('drained, exiting');
+		console.log(Q.bufferQueue.length());
 		process.exit();
 	}, 5000);
 });
+Q.on('enqueue', function(){
+	clearTimeout(drainTimeout);
+})
 
 var i = 0;
 var interval = setInterval(function(){
 	Q.enqueue({ test: i });
 	i++;
+	return;
 	if(i > 50){
 		clearInterval(interval);
 	}
-}, 200);
-
-setInterval(function(){
-
-}, 5000);
+}, 2000);
 
 
 
