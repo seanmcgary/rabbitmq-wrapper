@@ -13,7 +13,10 @@ var queue = RabbitMQ.createServer({
 				}
 			]
 		}
-	]
+	],
+	options: {
+		reconnect: true
+	}
 });
 
 
