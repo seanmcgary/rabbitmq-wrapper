@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/seanmcgary/rabbitmq-wrapper#readme",
   "dependencies": {
-    "amqp": "^0.2.5",
+    "amqp": "^0.2.4",
     "async": "^1.4.2",
     "bluebird": "^2.9.34",
     "lodash": "^3.10.1",
