@@ -10,3 +10,12 @@ setInterval(function(){
 		foo: 'bar'
 	}, true);
 }, 5000);
+
+
+queue.getQueue('test-queue-of-doom')
+.then((queue) => {
+	queue.subscribe((message, headers, deliveryInfo, messageObject) => {
+		console.log(message);
+		messageObject.acknowledge();
+	});
+})

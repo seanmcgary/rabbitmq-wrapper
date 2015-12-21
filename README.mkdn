@@ -19,5 +19,12 @@ queue.publishToQueue('<queueName>', {
 	foo: 'bar'
 }, true);
 
+queue.getQueue('<queueName>')
+.then((queue) => {
+	queue.subscribe((message, headers, deliveryInfo, messageObject) => {
+		console.log(message);
+		messageObject.acknowledge();
+	});
+})
 
 ```
