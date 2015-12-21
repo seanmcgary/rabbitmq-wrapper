@@ -29,7 +29,7 @@ Q.on('drain', function(){
 	drainTimeout = setTimeout(function(){
 		console.log('drained, exiting');
 		console.log(Q.bufferQueue.length());
-		process.exit();
+		//process.exit();
 	}, 5000);
 });
 Q.on('enqueue', function(){
