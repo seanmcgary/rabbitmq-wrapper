@@ -6,3 +6,7 @@
 let RabbitWrapper = require('../');
 
 let rabbit = RabbitWrapper();
+
+setInterval(function(){
+	//console.log('tick');
+}, 5000);
