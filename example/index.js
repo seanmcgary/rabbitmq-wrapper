@@ -9,7 +9,7 @@ setInterval(function(){
 	queue.publishToQueue('test-queue-of-doom', {
 		foo: 'bar'
 	}, true);
-}, 5000);
+}, 2000);
 
 
 queue.getQueue('test-queue-of-doom')
