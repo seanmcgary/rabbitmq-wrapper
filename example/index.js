@@ -2,7 +2,9 @@
 
 let Queue = require('../');
 
-let queue = new Queue();
+let queue = new Queue({
+	host: 'localhost'
+});
 
 setInterval(function(){
 
