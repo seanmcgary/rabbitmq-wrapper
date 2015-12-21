@@ -1,6 +1,6 @@
 {
   "name": "rabbitmq-wrapper",
-  "version": "2.0.0-beta1",
+  "version": "2.0.0-beta2",
   "description": "AMQP wrapper for managing RabbitMQ",
   "main": "index.js",
   "scripts": {
